@@ -78,6 +78,21 @@
     "reviewBody": "Emma is genuinely fantastic. Her work is completely bespoke — she reads the mechanics of how your body actually moves, spots where the real issue is (often not where you'd think), and works back to the root cause instead of papering over the symptom. And she's properly curious about it, happy to explain in whatever detail you want. That combination is rare."
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "LocalBusiness",
+      "@id": "https://emmahazeldine.co.uk/#business",
+      "name": "Emma Hazeldine · Specialist Biomechanics & Recovery"
+    },
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "Leon Johnson" },
+    "reviewBody": "Years of plastering left me with shoulder and wrist pain I'd given up on. Emma's actually sorted it — and found a load of back stuff I didn't know was there too. Really friendly, really good at what she does."
+  }
+  </script>
 </head>
 <body>
 
@@ -164,9 +179,24 @@
 
     <section class="band" style="background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)">
       <div class="container">
-        <div class="testimonial">
-          <blockquote>"Emma is genuinely fantastic. Her work is completely bespoke — she reads the mechanics of how your body actually moves, spots where the real issue is (often not where you'd think), and works back to the root cause instead of papering over the symptom. And she's properly curious about it, happy to explain in whatever detail you want. That combination is rare."</blockquote>
-          <cite>Chris Preston · Tavistock</cite>
+        <div class="testimonial-slider" aria-label="Client testimonials">
+          <div class="testimonial-slider__slides">
+
+            <div class="testimonial is-active">
+              <blockquote>"Emma is genuinely fantastic. Her work is completely bespoke — she reads the mechanics of how your body actually moves, spots where the real issue is (often not where you'd think), and works back to the root cause instead of papering over the symptom. And she's properly curious about it, happy to explain in whatever detail you want. That combination is rare."</blockquote>
+              <cite>Chris Preston · Tavistock</cite>
+            </div>
+
+            <div class="testimonial">
+              <blockquote>"Years of plastering left me with shoulder and wrist pain I'd given up on. Emma's actually sorted it — and found a load of back stuff I didn't know was there too. Really friendly, really good at what she does."</blockquote>
+              <cite>Leon Johnson · builder · Tavistock</cite>
+            </div>
+
+          </div>
+          <div class="testimonial-slider__dots" role="tablist">
+            <button class="testimonial-slider__dot is-active" aria-label="Testimonial 1 of 2"></button>
+            <button class="testimonial-slider__dot" aria-label="Testimonial 2 of 2"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -185,6 +215,24 @@
               <h3 class="post-card__title">Pain isn't damage</h3>
               <p class="post-card__excerpt">Twenty years of research says pain is not a reliable report on tissue damage. That changes what we do next.</p>
               <div class="post-card__meta">12 min read · 21 April 2026</div>
+            </div>
+          </a>
+          <a class="post-card" href="/mulling/first-session">
+            <div class="post-card__img" style="background-image:url('assets/photo-hands.png')"></div>
+            <div class="post-card__body">
+              <div class="post-card__kicker">Clinic</div>
+              <h3 class="post-card__title">What actually happens in a first session</h3>
+              <p class="post-card__excerpt">Sixty minutes, split into conversation, assessment, treatment and a plan. A walk-through from my side of the couch.</p>
+              <div class="post-card__meta">8 min read · 14 April 2026</div>
+            </div>
+          </a>
+          <a class="post-card" href="/mulling/dry-needling-vs-acupuncture">
+            <div class="post-card__img" style="background-image:url('assets/photo-needling.png')"></div>
+            <div class="post-card__body">
+              <div class="post-card__kicker">Clinical Tools</div>
+              <h3 class="post-card__title">Dry needling is not acupuncture</h3>
+              <p class="post-card__excerpt">Same needle, different model. Why the distinction matters for what you'd actually get in each session.</p>
+              <div class="post-card__meta">9 min read · 7 April 2026</div>
             </div>
           </a>
         </div>

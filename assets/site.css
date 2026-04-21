@@ -425,6 +425,48 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
   font-weight: 600;
 }
 
+/* --- Testimonial slider (home) --- */
+.testimonial-slider { position: relative; }
+.testimonial-slider__slides {
+  display: grid;
+  grid-template-areas: "stack";
+  position: relative;
+}
+.testimonial-slider__slides .testimonial {
+  grid-area: stack;
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.testimonial-slider__slides .testimonial.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+.testimonial-slider__dots {
+  display: flex;
+  gap: 0.55rem;
+  justify-content: center;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+.testimonial-slider__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--sand);
+  border: 1px solid var(--slate-soft);
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.testimonial-slider__dot.is-active { background: var(--teal); border-color: var(--teal); transform: scale(1.2); }
+.testimonial-slider__dot:hover { background: var(--teal-deep); }
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-slider__slides .testimonial { transition: opacity 0.01s; transform: none; }
+}
+
 /* ---------- Blog list cards ---------- */
 
 .post-grid {
