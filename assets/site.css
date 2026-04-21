@@ -38,6 +38,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;            /* belt-and-braces against any rogue horizontal overflow on mobile */
 }
 
 @media (min-width: 768px) { body { font-size: 18px; } }
@@ -111,11 +112,48 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 }
 @media (min-width: 768px) { .nav__inner { padding: 1.1rem 2rem; } }
 
-.nav__logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-.nav__logo img { height: 40px; width: auto; }
+.nav__logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; min-width: 0; flex: 1 1 auto; }
+.nav__logo img { height: 34px; width: auto; flex-shrink: 0; }
+@media (min-width: 480px) { .nav__logo img { height: 40px; } }
 @media (min-width: 768px) { .nav__logo img { height: 48px; } }
-.nav__wm { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.82rem; font-weight: 700; color: var(--slate); line-height: 1.1; }
-.nav__wm .tag { display: block; font-size: 0.55rem; font-weight: 500; color: var(--slate-soft); letter-spacing: 0.2em; margin-top: 2px; }
+
+.nav__wm {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--slate);
+  line-height: 1.1;
+  min-width: 0;
+  /* override any .tag pill styling that might cascade in from blog-post tag pills */
+  background: none !important;
+  padding: 0;
+  border-radius: 0;
+}
+@media (min-width: 768px) { .nav__wm { font-size: 0.82rem; letter-spacing: 0.14em; } }
+
+.nav__wm .tag {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: var(--slate-soft);
+  letter-spacing: 0.2em;
+  margin-top: 2px;
+  /* override blog-post tag-pill styling */
+  background: none !important;
+  padding: 0;
+  border-radius: 0;
+}
+/* Tablet: hide the tagline (just the name). Phones: hide the whole wordmark
+   so the mobile nav is a clean logo + CTA pair with no crowding. */
+@media (max-width: 720px) {
+  .nav__wm .tag { display: none; }
+  .nav__wm { font-size: 0.7rem; letter-spacing: 0.08em; }
+}
+@media (max-width: 480px) {
+  .nav__wm { display: none; }  /* mobile: logo image carries the brand */
+}
 
 .nav__links { display: none; gap: 1.75rem; align-items: center; }
 @media (min-width: 960px) { .nav__links { display: flex; } }
@@ -136,16 +174,20 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 .nav__cta {
   background: var(--teal);
   color: var(--white);
-  padding: 0.6rem 1.1rem;
+  padding: 0.55rem 0.9rem;
   border-radius: var(--radius);
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
   transition: background 0.15s;
+  flex-shrink: 0;
+}
+@media (min-width: 480px) {
+  .nav__cta { padding: 0.6rem 1.1rem; font-size: 0.72rem; letter-spacing: 0.12em; }
 }
 .nav__cta:hover { background: var(--teal-deep); color: var(--white); }
 
@@ -153,7 +195,8 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;            /* fallback */
+  min-height: 100svh;           /* better on mobile: ignores URL-bar jump */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -164,7 +207,7 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
   padding: 5rem 1.25rem 4rem;
 }
 @media (min-width: 768px) {
-  .hero { min-height: 82vh; padding: 6rem 2rem 5rem; }
+  .hero { padding: 6rem 2rem 5rem; }
 }
 
 .hero__inner { max-width: var(--container); margin: 0 auto; width: 100%; }
@@ -572,7 +615,7 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 
 .footer {
   background: var(--teal-deep);
-  color: var(--teal-soft);
+  color: rgba(255, 255, 255, 0.85);
   padding: 3rem 1.25rem 2rem;
 }
 @media (min-width: 768px) { .footer { padding: 3rem 2rem 2rem; } }
@@ -587,28 +630,40 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 @media (min-width: 768px) { .footer__inner { grid-template-columns: 1.2fr 1fr 1fr; } }
 
 .footer__brand { font-family: var(--font-display); color: var(--white); }
-.footer__brand strong { display: block; font-size: 1.1rem; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 0.2rem; }
-.footer__brand .tag { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal-soft); }
-.footer__brand p { font-size: 0.85rem; color: var(--teal-soft); margin-top: 1rem; max-width: 320px; line-height: 1.5; }
+.footer__brand strong { display: block; font-size: 1.15rem; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 0.3rem; color: #fff; }
+.footer__brand .tag {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  /* override blog-post tag-pill styling */
+  background: none !important;
+  padding: 0;
+  border-radius: 0;
+}
+.footer__brand p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.82); margin-top: 1rem; max-width: 320px; line-height: 1.55; font-family: var(--font-body); }
 
-.footer h5 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin: 0 0 0.8rem; }
+.footer h5 { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; margin: 0 0 0.9rem; font-weight: 600; }
 .footer ul { list-style: none; padding: 0; margin: 0; }
-.footer li { margin-bottom: 0.5rem; font-size: 0.88rem; }
-.footer a { color: var(--teal-soft); text-decoration: none; }
-.footer a:hover { color: var(--white); }
+.footer li { margin-bottom: 0.55rem; font-size: 0.92rem; }
+.footer a { color: rgba(255, 255, 255, 0.88); text-decoration: none; transition: color 0.15s; }
+.footer a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
 .footer__bottom {
   max-width: var(--container);
   margin: 2rem auto 0;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 0.75rem;
-  color: rgba(215, 232, 231, 0.65);
-  letter-spacing: 0.06em;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.08em;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
+  font-family: var(--font-display);
 }
 
 /* ---------- Page header (About, What I Do, Contact) ---------- */
