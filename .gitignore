@@ -1,0 +1,18 @@
+# OS + editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Secrets (shouldn't exist in this repo but defensive)
+.env
+.env.*
+!.env.example
+
+# Vercel local state
+.vercel/
+
+# Python http.server log when previewing
+*.log
