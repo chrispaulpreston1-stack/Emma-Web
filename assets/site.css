@@ -435,8 +435,8 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 .testimonial-slider__slides .testimonial {
   grid-area: stack;
   opacity: 0;
-  transform: translateX(24px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(16px);
+  transition: opacity 0.7s cubic-bezier(0.33, 1, 0.68, 1), transform 0.7s cubic-bezier(0.33, 1, 0.68, 1);
   pointer-events: none;
 }
 .testimonial-slider__slides .testimonial.is-active {
@@ -444,6 +444,50 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
   transform: translateX(0);
   pointer-events: auto;
 }
+
+/* Arrows — sit over the slider's vertical middle, overlapping the edge slightly */
+.testimonial-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(20, 70, 75, 0.18);
+  color: var(--teal-deep);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  font-family: var(--font-display);
+}
+.testimonial-slider__arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 14px rgba(20, 70, 75, 0.25);
+  background: var(--teal-soft);
+}
+.testimonial-slider__arrow:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.testimonial-slider__arrow--prev { left: -10px; }
+.testimonial-slider__arrow--next { right: -10px; }
+@media (min-width: 768px) {
+  .testimonial-slider__arrow--prev { left: -22px; }
+  .testimonial-slider__arrow--next { right: -22px; }
+}
+@media (max-width: 480px) {
+  .testimonial-slider__arrow { width: 36px; height: 36px; font-size: 1.15rem; }
+  .testimonial-slider__arrow--prev { left: -4px; }
+  .testimonial-slider__arrow--next { right: -4px; }
+}
+
 .testimonial-slider__dots {
   display: flex;
   gap: 0.55rem;
@@ -463,8 +507,11 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
 }
 .testimonial-slider__dot.is-active { background: var(--teal); border-color: var(--teal); transform: scale(1.2); }
 .testimonial-slider__dot:hover { background: var(--teal-deep); }
+
 @media (prefers-reduced-motion: reduce) {
   .testimonial-slider__slides .testimonial { transition: opacity 0.01s; transform: none; }
+  .testimonial-slider__arrow,
+  .testimonial-slider__dot { transition: none; }
 }
 
 /* ---------- Blog list cards ---------- */
