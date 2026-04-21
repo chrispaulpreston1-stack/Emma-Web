@@ -646,6 +646,28 @@ hr { border: none; border-top: 1px solid var(--sand); margin: 3rem 0; }
   margin-top: 0.75rem;
 }
 
+/* --- References block on blog posts --- */
+.references {
+  margin: 2.5rem 0 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--off-white);
+  border-left: 3px solid var(--teal-soft);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.references h4 {
+  margin: 0 0 0.7rem;
+  color: var(--teal);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.references ul { margin: 0; padding-left: 1.2rem; }
+.references li { margin-bottom: 0.5rem; color: var(--slate); }
+.references li:last-child { margin-bottom: 0; }
+.references a { color: var(--teal-deep); text-decoration: underline; text-underline-offset: 2px; }
+
 .tags { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--sand); }
 .tag { display: inline-block; font-size: 0.75rem; font-weight: 500; color: var(--teal-deep); background: var(--teal-soft); padding: 4px 12px; border-radius: 999px; margin-right: 0.4rem; margin-bottom: 0.4rem; letter-spacing: 0.02em; text-decoration: none; }
 
