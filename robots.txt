@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emmahazeldine.com/sitemap.xml
+Sitemap: https://emmahazeldine.co.uk/sitemap.xml

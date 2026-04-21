@@ -1,6 +1,6 @@
 # Emma Hazeldine — personal brand website
 
-Static HTML and CSS. No build step. Deployed to Vercel at **[emmahazeldine.com](https://emmahazeldine.com)**.
+Static HTML and CSS. No build step. Deployed to Vercel at **[emmahazeldine.co.uk](https://emmahazeldine.co.uk)**.
 
 ## Pages
 
@@ -78,4 +78,4 @@ No frameworks, no JavaScript bundling, no build step. Fonts from Google Fonts CD
 
 - Practitioner: Emma Hazeldine — Specialist Biomechanics and Recovery
 - Clinic: NLFitness Tavistock Injury Clinic
-- Contact: text or WhatsApp on 07902 081 951 · [emma@emmahazeldine.com](mailto:emma@emmahazeldine.com)
+- Contact: text or WhatsApp on 07902 081 951 · [emma@emmahazeldine.co.uk](mailto:emma@emmahazeldine.co.uk)
