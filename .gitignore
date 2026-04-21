@@ -16,3 +16,6 @@ Thumbs.db
 
 # Python http.server log when previewing
 *.log
+
+# Playwright test screenshot output
+scripts/.screenshots/
