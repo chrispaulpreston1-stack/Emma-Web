@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What I Do · Emma Hazeldine</title>
   <meta name="description" content="Sports massage, dry needling, western medical acupuncture, cupping, IASTM, and kinesiology taping in Tavistock.">
-  <link rel="stylesheet" href="assets/site.css?v=7">
+  <link rel="stylesheet" href="assets/site.css?v=9">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
@@ -70,8 +70,13 @@
       <div class="container">
         <figure class="photo-band">
           <picture>
-            <source srcset="assets/emma-hazeldine-south-west-coast-path-wembury.webp" type="image/webp">
-            <img src="assets/emma-hazeldine-south-west-coast-path-wembury.jpg"
+            <!-- Phones get a 4:3 crop; the 2.5:1 banner renders as a ~127px sliver at 360px wide. -->
+            <source media="(max-width: 640px)" width="800" height="600"
+                    srcset="/assets/emma-hazeldine-south-west-coast-path-wembury-mobile.webp" type="image/webp">
+            <source media="(max-width: 640px)" width="800" height="600"
+                    srcset="/assets/emma-hazeldine-south-west-coast-path-wembury-mobile.jpg" type="image/jpeg">
+            <source srcset="/assets/emma-hazeldine-south-west-coast-path-wembury.webp" type="image/webp">
+            <img src="/assets/emma-hazeldine-south-west-coast-path-wembury.jpg"
                  width="1250" height="496" loading="lazy" decoding="async"
                  alt="Emma Hazeldine beside a South West Coast Path signpost at Wembury, Devon">
           </picture>
@@ -154,8 +159,8 @@
     </section>
 
     <section class="cta-band">
-      <h2>60 minutes · £50</h2>
-      <p>Text or WhatsApp on 07902 081 951 to book. Clinic at NLFitness Tavistock.</p>
+      <h2>£50 a session · £75 for a full assessment</h2>
+      <p>A 60-minute session is £50. A full assessment with a written write-up is £75. Text or WhatsApp on 07902 081 951 to book. Clinic at NLFitness Tavistock.</p>
       <a class="btn-primary" href="/contact">Session details &amp; location →</a>
     </section>
 
