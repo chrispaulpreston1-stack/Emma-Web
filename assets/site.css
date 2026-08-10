@@ -296,8 +296,8 @@ main:focus { outline: none; }
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(20, 70, 75, 0.12) 0%, rgba(20, 70, 75, 0.34) 40%, rgba(8, 35, 40, 0.9) 100%),
-    image-set(url("emma-hazeldine-sports-massage-therapist-coast-path-devon-mobile.webp") type("image/webp"),
-              url("emma-hazeldine-sports-massage-therapist-coast-path-devon-mobile.jpg") type("image/jpeg")) 30% center / cover no-repeat;
+    image-set(url("emma-hazeldine-sports-massage-therapist-coast-path-devon-mobile.727bc99f.webp") type("image/webp"),
+              url("emma-hazeldine-sports-massage-therapist-coast-path-devon-mobile.fcb46c82.jpg") type("image/jpeg")) 30% center / cover no-repeat;
   color: var(--white);
   padding: 5rem 1.25rem 3rem;
 }
@@ -316,8 +316,8 @@ main:focus { outline: none; }
   .hero {
     background:
       linear-gradient(180deg, rgba(20, 70, 75, 0.12) 0%, rgba(20, 70, 75, 0.34) 40%, rgba(8, 35, 40, 0.9) 100%),
-      image-set(url("emma-hazeldine-sports-massage-therapist-coast-path-devon.webp") type("image/webp"),
-                url("emma-hazeldine-sports-massage-therapist-coast-path-devon.jpg") type("image/jpeg")) 25% 88% / cover no-repeat;
+      image-set(url("emma-hazeldine-sports-massage-therapist-coast-path-devon.5f4c4b3d.webp") type("image/webp"),
+                url("emma-hazeldine-sports-massage-therapist-coast-path-devon.0700730a.jpg") type("image/jpeg")) 25% 88% / cover no-repeat;
   }
 }
 
