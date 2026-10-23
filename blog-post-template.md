@@ -73,6 +73,8 @@ Emma can override the copy on this card per-post if it helps.
 
 ## 8. Audio version (ElevenLabs)
 
+**Paused, 23 October 2026.** The players were taken off every post because no recordings existed yet, so each one showed a player that would not play. When a recording is ready, save the MP3 as below and put the `audio-player` block back on that post, directly after the closing `</section>` of the hero. The block is in the version history (commit 7ebf46f has it on every post) and its styling is still in `assets/site.css`.
+
 **Guide.** Every post gets a ~3-minute audio version at the top. Generate a shortened read-aloud script (roughly 450–500 words) from the full post — think "the bits you'd read aloud to a friend in the car." Feed into ElevenLabs (Emma's cloned voice preferred; *Charlotte* or *Jessica* as a stock fallback). Export at 128 kbps, save as `audio/<post-slug>.mp3` in the site folder, and the player on the post picks it up automatically. See [audio/README.md](audio/README.md) for the full flow.
 
 ---
